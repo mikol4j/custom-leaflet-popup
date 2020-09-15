@@ -1,0 +1,41 @@
+<div style="width:200px; min-height: 150px">
+    <div class="row">
+        <div 
+          class="col-sm-3" 
+          *ngFor="let tab of tabsWithIcons" 
+          (click)="selectTab(tab)" 
+          class="{{selectedTab && selectedTab == tab['tabName'] ? 'active': ''}}" >{{tab['tabName']}}
+        </div>
+      </div>
+    <span style="background-color: #E0E0E0;">
+    <div class="row" *ngIf="selectedTab == 'Tab1'">
+        <ul class="p-3">
+          <li>This is Tab1</li>
+        </ul>
+      </div>
+    <div class="row" *ngIf="selectedTab == 'Tab2'">
+        <ul class="p-3">
+            <li>This is Tab2</li>
+      </ul>
+  
+    </div>
+    <div class="row" *ngIf="selectedTab == 'Tab3'">
+        <ul class="p-3">
+            <li>This is Tab3</li>
+      </ul>
+  
+    </div>
+    <div class="row" *ngIf="selectedTab == 'Tab4'">
+        <ul class="p-3">
+            <li>This is Tab4</li>
+      </ul>
+  
+    </div>
+  </span>
+  </div>
+  <style>
+  .active
+  {
+      border-bottom: 1px solid green;
+  }
+  </style>
